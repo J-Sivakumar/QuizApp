@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Login  Form</title>
+		<style type='text/css'>
+			input[type=email],input[type=password]
+			{
+				width:50%;
+				height:40px;
+				padding:10px 10px;
+				margin:8px;
+				box-sizing:border-box;
+				border:2px solid #888;
+				border-radius:5px;
+				background-color:yellow;;
+				color:red;
+			}
+			input[type=submit],input[type=reset]
+			{
+				background-color:cyan;
+				border:2px solid blue;
+				color:black;
+				padding:8px;
+				margin:5px;
+				cursor:pointer;
+				border-radius:16px;
+			}
+			body
+			{
+				background-color:#ddd;
+				font-size: 1.5em;
+			}
+			form
+			{
+				background-color:lightgreen;
+				width:40%;
+				height: max-content;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<center>
+			{%if msg%}
+				{{msg}}
+			{% endif %}
+			<form action="http://localhost:5000/success" method="post">
+				<h1>Login  Form</h1>
+				<label for='eid'>Email: </label> &nbsp;&nbsp;&nbsp;&nbsp;
+				<input type='email' id='eid' name='email' placeholder='Enter your e-mail id' required><br>
+				<label for='pid'>Password:</label>	
+				<input type='password' id='pid' name='pwd' placeholder='Enter a new password' required ><br>	
+				<small><a href="http://localhost:5000/changepwd"">Forget Password</a></small><br>		
+				<input type='Submit' value='Login'>
+				<input type='Reset' value='Clear'><br>
+				<small>New User? <a href="http://localhost:5000/register"">Register here</a></small>
+			</form>
+
+		</center>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File</title>
+    <style>
+        input[type=email],input[type=password]
+			{
+				width:200px;
+				height:40px;
+				padding:10px 10px;
+				margin:8px;
+				box-sizing:border-box;
+				border:2px solid #888;
+				border-radius:5px;
+				background-color:yellow;;
+				color:red;
+			}
+			input[type=submit]{
+				background-color:cyan;
+				border:2px solid blue;
+				color:black;
+				padding:8px;
+				margin:5px;
+				cursor:pointer;
+				border-radius:16px;
+			}
+    </style>
+</head>
+<body>
+    <form action="http://localhost:5000/success2" method="POST">
+        <input type="email" name="email" placeholder="Enter email">
+        <input type="password" name="pwd" placeholder="Enter a new pssword">
+        <input type="submit" value="Update">
+
+    </form>
+</body>
+</html>

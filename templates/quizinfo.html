@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        form
+        {
+          margin-top: 15%; 
+          font-size: larger;
+        }
+        select{
+            width: 100%;
+            height: max-content;
+            font-size: 1.1em;
+            border: 2px solid green;
+            border-radius: 15px;
+            background-color: chartreuse;
+        }
+        input[type=submit]{
+            background-color:rgb(175, 219, 219);
+			border:2px solid orange;
+			color:black;
+            padding:8px;
+			margin:5px;
+			cursor:pointer;
+			border-radius:16px;
+            width: 100px;
+        }
+        input[type=submit]:hover{
+            background-color: chartreuse;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <form action="/playquiz" method="post">
+        <table>
+            <tr>
+                <th><label for="amt">Number of Questions:</label></th>
+                <th>
+                    <select id="amt" name="amt">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                </select>
+            </th>
+            </tr>
+            <tr>
+                <th><label for="Level">Select Difficulty Level : </label></th>
+                <th>
+                    <select id="Level"  name="Level">
+                        <option value="any">Any Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" value="Play">
+                </th>
+            </tr>
+        </table>
+    </form>
+    </center>
+</body>
+</html>

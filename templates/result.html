@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        
+    </style>
+    <script>
+        
+        
+        function show()
+        {
+            var b= document.getElementById('answer');
+            var btn= document.getElementById('btn');
+            var q= document.getElementById('q');
+            if(b.style.display == 'none'){
+                b.style.display = 'block';
+                b.style.padding = '5px';
+                b.style.margin = '5px';     
+                b.style.textAlign = 'left';
+                btn.innerHTML = "Hide Answers";
+
+            }   
+            else{
+                b.style.display = 'none';
+                btn.innerHTML = "Show Answers";
+            }
+        }
+    </script>
+</head>
+<body>
+    Your Score :  {{ans}} <br>
+    <button id="btn" onclick="show()">Show Answers</button>
+    <div id="answer" style="display: none;">
+    {% for i in range(len)%}   
+            <label for="q{{i}}" id="q" style="display: block;padding: 5px;margin: 5px;font-weight: bold;">{{i+1}}.&nbsp;  {{dict[i]['question']}}</label>
+            <div id="q{{i}}" style="display: block;padding: 5px;margin: 5px;">
+                {% for j in range(4)%}  
+                {% if dict[i]['option'][j]==dict[i]['correct'] %}
+                    <label style="background-color: chartreuse;"><input type="radio" name="{{i}}" value="{{dict[i]['option'][j]}}" class="correct" id="{{i}}" checked >{{dict[i]['option'][j]}}</label><br>
+                {% else %}
+                    <label><input type="radio" name="{{i}}" value="{{dict[i]['option'][j]}}" onclick="return false">{{dict[i]['option'][j]}}</label><br>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+</body>
+</html>

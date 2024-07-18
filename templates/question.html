@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+</head>
+<body>
+    <form action="/result" method="post">
+        {% for i in range(len)%}   
+            <label for="q{{i}}" id="q" style="display: block;padding: 5px;margin: 5px;font-weight: bold;">{{i+1}}.&nbsp; {{dict[i]['question']}}</label>
+            <div id="q{{i}}" style="display: block;padding: 5px;margin: 5px;">
+              <label><input type="radio" name="{{i}}" value="{{dict[i]['option'][0]}}" >{{dict[i]['option'][0]}}</label><br>
+              <label><input type="radio" name="{{i}}" value="{{dict[i]['option'][1]}}" >{{dict[i]['option'][1]}}</label><br>
+              <label><input type="radio" name="{{i}}" value="{{dict[i]['option'][2]}}" >{{dict[i]['option'][2]}}</label><br>
+              <label><input type="radio" name="{{i}}" value="{{dict[i]['option'][3]}}" >{{dict[i]['option'][3]}}</label><br>
+            </div>
+            <br>
+
+        {% endfor %}
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

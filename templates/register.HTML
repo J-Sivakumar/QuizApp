@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Registration Form</title>
+		<style type='text/css'>
+			input[type=text],input[type=email],input[type=password]
+			{
+				width:100%;
+				height:40px;
+				padding:10px 10px;
+				margin:8px;
+				box-sizing:border-box;
+				border:2px solid red;
+				border-radius:5px;
+				background-color:lightyellow;;
+				color:black;
+			}
+		
+			input[type=submit],input[type=reset]
+			{
+				background-color:cyan;
+				border:2px solid orange;
+				color:black;
+				padding:8px;
+				margin:5px;
+				cursor:pointer;
+				border-radius:16px;
+			}
+			form
+			{
+				background-color:#ccc;
+				width:50%;
+			}
+			body
+			{
+				background-color:#888;
+				font-size: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			{%if msg%}
+				{{msg}}
+			{% endif %}
+			<form method="post" action="http://localhost:5000/success1">
+				<h1>Registration Form</h1>
+				<table>
+
+					<tr>
+						<th>
+							<label for='name'>Username: </label>
+						</th>
+					
+						<td>
+							<input type='text' id='name' name='name' placeholder='Enter your name'>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label for='eid'>Email: </label>
+						</th>
+					
+						<td>
+							<input type='email' id='eid' name='email' placeholder='Enter e-mail id'  required>
+						</td>			
+					</tr>
+					<tr>
+						<th>
+							<label for='pid'>Password:</label>
+						</th>
+						<td>
+							<input type='password' id='pid' name='pwd' placeholder='Enter a new password' pattern="[\w.]{8,16}" required >
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label for='pid'>Confirm Password:</label>
+						</th>
+						<td>
+							<input type='password' id='pid' name='pwd1' placeholder='Re-enter  password' required >
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<input type='Submit' value='Register'>
+						</th>
+						<th>
+							<input type='Reset' value='Clear'>
+						</th>
+					</tr>
+					
+				</table>
+			</form>
+		</center>
+	</body>
+</html>

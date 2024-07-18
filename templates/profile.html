@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body{
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        
+            <table cellspacing="10">
+                <tr>
+                    <th colspan="2" style="font-size: 1.5em;">Your Profile</th>
+                </tr>
+                <tr>
+                    <th>Username:</th>
+                    <td>{{data[2]}}</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>{{data[0]}}</td>
+                </tr>
+                <tr>
+                    <th>Password:</th>
+                    <td>{{data[1]}}</td>
+                </tr>
+                <tr>
+                    <td> <a href="http://localhost:5000/changepwd">Change Password</a> </td>
+                    <td> <a href="http://localhost:5000/quiz">Play Quiz</a> </td>
+                    <td><a href="http://localhost:5000/logout">logout</a></td>
+                </tr>
+
+            </table>
+    </center>
+</body>
+</html>
